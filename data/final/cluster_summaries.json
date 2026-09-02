@@ -1,0 +1,192 @@
+[
+  {
+    "cluster_rank": 1,
+    "cluster_id": 0,
+    "n_docs": 1202,
+    "avg_year": 2016.685524126456,
+    "avg_citations": 36.36772046589018,
+    "top_terms": [
+      "firms",
+      "real",
+      "options",
+      "policy",
+      "firm",
+      "corporate",
+      "capacity",
+      "option",
+      "capital",
+      "price",
+      "economic",
+      "carbon"
+    ],
+    "top_docs": [
+      {
+        "title": "Sustainable investing with ESG rating uncertainty",
+        "year": "2022",
+        "citations": 1291
+      },
+      {
+        "title": "Time to build, option value, and investment decisions",
+        "year": "1987",
+        "citations": 937
+      },
+      {
+        "title": "Investment and demand uncertainty",
+        "year": "1999",
+        "citations": 833
+      }
+    ]
+  },
+  {
+    "cluster_rank": 2,
+    "cluster_id": 1,
+    "n_docs": 989,
+    "avg_year": 2017.216380182002,
+    "avg_citations": 37.919110212335696,
+    "top_terms": [
+      "ambiguity",
+      "aversion",
+      "utility",
+      "optimal",
+      "stock",
+      "consumption",
+      "choice",
+      "risk",
+      "asset",
+      "volatility",
+      "investors",
+      "investor"
+    ],
+    "top_docs": [
+      {
+        "title": "A smooth model of decision making under ambiguity",
+        "year": "2005",
+        "citations": 1962
+      },
+      {
+        "title": "Investing for the long run when returns are predictable",
+        "year": "2000",
+        "citations": 1392
+      },
+      {
+        "title": "Optimal Financial Knowledge and Wealth Inequality",
+        "year": "2017",
+        "citations": 678
+      }
+    ]
+  },
+  {
+    "cluster_rank": 3,
+    "cluster_id": 2,
+    "n_docs": 381,
+    "avg_year": 2016.3517060367453,
+    "avg_citations": 58.76377952755905,
+    "top_terms": [
+      "robust",
+      "optimization",
+      "selection",
+      "problem",
+      "risk",
+      "mean-variance",
+      "programming",
+      "stochastic",
+      "estimation",
+      "asset",
+      "parameter",
+      "performance"
+    ],
+    "top_docs": [
+      {
+        "title": "Optimal Versus Naive Diversification: How Inefficient is the 1/N Portfolio Strategy?",
+        "year": "2009",
+        "citations": 3272
+      },
+      {
+        "title": "Distributionally Robust Optimization Under Moment Uncertainty with Application to Data-Driven Problems",
+        "year": "2010",
+        "citations": 1938
+      },
+      {
+        "title": "Bayes-Stein Estimation for Portfolio Analysis",
+        "year": "1986",
+        "citations": 1009
+      }
+    ]
+  },
+  {
+    "cluster_rank": 4,
+    "cluster_id": 3,
+    "n_docs": 279,
+    "avg_year": 2018.5376344086021,
+    "avg_citations": 31.0,
+    "top_terms": [
+      "fuzzy",
+      "project",
+      "selection",
+      "uncertain",
+      "projects",
+      "programming",
+      "optimization",
+      "proposed",
+      "algorithm",
+      "decision",
+      "problem",
+      "multi-objective"
+    ],
+    "top_docs": [
+      {
+        "title": "An approach to multiattribute decision making with interval-valued intuitionistic fuzzy assessments and incomplete weights",
+        "year": "2009",
+        "citations": 313
+      },
+      {
+        "title": "A fuzzy set approach for R\\&D portfolio selection using a real options valuation model",
+        "year": "2007",
+        "citations": 261
+      },
+      {
+        "title": "Portfolio selection based on upper and lower exponential possibility distributions",
+        "year": "1999",
+        "citations": 250
+      }
+    ]
+  },
+  {
+    "cluster_rank": 5,
+    "cluster_id": 4,
+    "n_docs": 161,
+    "avg_year": 2023.447204968944,
+    "avg_citations": 23.832298136645964,
+    "top_terms": [
+      "connectedness",
+      "covid-",
+      "bitcoin",
+      "markets",
+      "stock",
+      "green",
+      "oil",
+      "spillovers",
+      "volatility",
+      "energy",
+      "esg",
+      "cryptocurrencies"
+    ],
+    "top_docs": [
+      {
+        "title": "Do geopolitical events transmit opportunity or threat to green markets? Decomposed measures of geopolitical risks",
+        "year": "2022",
+        "citations": 214
+      },
+      {
+        "title": "Impact of speculation and economic uncertainty on commodity markets",
+        "year": "2016",
+        "citations": 175
+      },
+      {
+        "title": "Dynamic connectedness among the implied volatilities of oil prices and financial assets: New evidence of the COVID-19 pandemic",
+        "year": "2023",
+        "citations": 156
+      }
+    ]
+  }
+]

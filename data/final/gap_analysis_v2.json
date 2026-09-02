@@ -1,0 +1,168 @@
+{
+  "N_corpus": 3643,
+  "method": "single_exclusive_keyword_per_cluster",
+  "keyword_per_cluster": {
+    "1": "firms",
+    "2": "ambiguity",
+    "3": "robust",
+    "4": "fuzzy",
+    "5": "connectedness"
+  },
+  "theme_labels": {
+    "1": "opciones reales / inversión corporativa bajo incertidumbre",
+    "2": "aversión a la ambigüedad / elección conductual",
+    "3": "optimización robusta / selección de portafolio",
+    "4": "decisión multicriterio difusa (fuzzy MCDM)",
+    "5": "conectividad de crisis / contagio (COVID, cripto, ESG)"
+  },
+  "f": {
+    "1": 596,
+    "2": 416,
+    "3": 557,
+    "4": 189,
+    "5": 44
+  },
+  "pairs": [
+    {
+      "par": [
+        2,
+        5
+      ],
+      "kw_i": "ambiguity",
+      "kw_j": "connectedness",
+      "f_i": 416,
+      "f_j": 44,
+      "cooc_ij": 0,
+      "expected": 5.024430414493549,
+      "gap_score": null,
+      "gap_score_inf": true
+    },
+    {
+      "par": [
+        4,
+        5
+      ],
+      "kw_i": "fuzzy",
+      "kw_j": "connectedness",
+      "f_i": 189,
+      "f_j": 44,
+      "cooc_ij": 0,
+      "expected": 2.2827340104309637,
+      "gap_score": null,
+      "gap_score_inf": true
+    },
+    {
+      "par": [
+        1,
+        4
+      ],
+      "kw_i": "firms",
+      "kw_j": "fuzzy",
+      "f_i": 596,
+      "f_j": 189,
+      "cooc_ij": 4,
+      "expected": 30.920669777655778,
+      "gap_score": 7.7301674444139445,
+      "gap_score_inf": false
+    },
+    {
+      "par": [
+        1,
+        5
+      ],
+      "kw_i": "firms",
+      "kw_j": "connectedness",
+      "f_i": 596,
+      "f_j": 44,
+      "cooc_ij": 1,
+      "expected": 7.198462805380181,
+      "gap_score": 7.198462805380181,
+      "gap_score_inf": false
+    },
+    {
+      "par": [
+        1,
+        2
+      ],
+      "kw_i": "firms",
+      "kw_j": "ambiguity",
+      "f_i": 596,
+      "f_j": 416,
+      "cooc_ij": 15,
+      "expected": 68.05819379632172,
+      "gap_score": 4.537212919754781,
+      "gap_score_inf": false
+    },
+    {
+      "par": [
+        3,
+        4
+      ],
+      "kw_i": "robust",
+      "kw_j": "fuzzy",
+      "f_i": 557,
+      "f_j": 189,
+      "cooc_ij": 17,
+      "expected": 28.89733735931924,
+      "gap_score": 1.6998433740776024,
+      "gap_score_inf": false
+    },
+    {
+      "par": [
+        3,
+        5
+      ],
+      "kw_i": "robust",
+      "kw_j": "connectedness",
+      "f_i": 557,
+      "f_j": 44,
+      "cooc_ij": 4,
+      "expected": 6.727422454021411,
+      "gap_score": 1.6818556135053528,
+      "gap_score_inf": false
+    },
+    {
+      "par": [
+        1,
+        3
+      ],
+      "kw_i": "firms",
+      "kw_j": "robust",
+      "f_i": 596,
+      "f_j": 557,
+      "cooc_ij": 58,
+      "expected": 91.1259950590173,
+      "gap_score": 1.571137845845126,
+      "gap_score_inf": false
+    },
+    {
+      "par": [
+        2,
+        4
+      ],
+      "kw_i": "ambiguity",
+      "kw_j": "fuzzy",
+      "f_i": 416,
+      "f_j": 189,
+      "cooc_ij": 21,
+      "expected": 21.582212462256383,
+      "gap_score": 1.0277244029645896,
+      "gap_score_inf": false
+    },
+    {
+      "par": [
+        2,
+        3
+      ],
+      "kw_i": "ambiguity",
+      "kw_j": "robust",
+      "f_i": 416,
+      "f_j": 557,
+      "cooc_ij": 172,
+      "expected": 63.60472138347516,
+      "gap_score": 0.36979489176439045,
+      "gap_score_inf": false
+    }
+  ],
+  "n_significant": 8
+}

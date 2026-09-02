@@ -1,0 +1,531 @@
+[
+ {
+  "doi": "10.1016/j.pacfin.2024.102368",
+  "year": "2024",
+  "source": "both",
+  "exclusion_reasons": [
+   "retractado:article; retracted publication"
+  ]
+ },
+ {
+  "doi": "10.3905/jpm.2011.37.2.072",
+  "year": "2011",
+  "source": "both",
+  "exclusion_reasons": [
+   "sin_resumen"
+  ]
+ },
+ {
+  "doi": "10.17230/ecos.2012.35.2",
+  "year": "2012",
+  "source": "wos_only",
+  "exclusion_reasons": [
+   "idioma:spanish"
+  ]
+ },
+ {
+  "doi": "10.3905/jpm.2017.43.5.157",
+  "year": "2017",
+  "source": "wos_only",
+  "exclusion_reasons": [
+   "sin_resumen"
+  ]
+ },
+ {
+  "doi": "10.3905/joi.2019.28.1.008",
+  "year": "2019",
+  "source": "wos_only",
+  "exclusion_reasons": [
+   "sin_resumen"
+  ]
+ },
+ {
+  "doi": "10.1016/j.estger.2014.06.003",
+  "year": "2014",
+  "source": "wos_only",
+  "exclusion_reasons": [
+   "idioma:spanish"
+  ]
+ },
+ {
+  "doi": "10.5700/rege535",
+  "year": "2014",
+  "source": "wos_only",
+  "exclusion_reasons": [
+   "idioma:portuguese"
+  ]
+ },
+ {
+  "doi": "10.18267/j.polek.711",
+  "year": "2009",
+  "source": "wos_only",
+  "exclusion_reasons": [
+   "idioma:czech"
+  ]
+ },
+ {
+  "doi": "10.1108/rbf-07-2024-0189",
+  "year": "2025",
+  "source": "wos_only",
+  "exclusion_reasons": [
+   "retractado:article; retracted publication"
+  ]
+ },
+ {
+  "doi": "10.15838/esc.2024.5.95.6",
+  "year": "2024",
+  "source": "wos_only",
+  "exclusion_reasons": [
+   "idioma:russian"
+  ]
+ },
+ {
+  "doi": "10.1007/bf02927682",
+  "year": "1962",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:german"
+  ]
+ },
+ {
+  "doi": "10.26794/2587-5671-2025-29-2-94-106",
+  "year": "2025",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:russian"
+  ]
+ },
+ {
+  "doi": "10.22105/dmor.2022.322209.1547",
+  "year": "2023",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:persian"
+  ]
+ },
+ {
+  "doi": "10.20180/j.qjem.2025.03.09",
+  "year": "2025",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:chinese"
+  ]
+ },
+ {
+  "doi": "10.13133/2037-3651/18283",
+  "year": "2023",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:italian"
+  ]
+ },
+ {
+  "doi": "10.1007/bf02366902",
+  "year": "1968",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:german"
+  ]
+ },
+ {
+  "doi": "10.24056/kar.2026.02.004",
+  "year": "2026",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:korean"
+  ]
+ },
+ {
+  "doi": "10.13587/j.cnki.jieem.2025.06.001",
+  "year": "2025",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:chinese"
+  ]
+ },
+ {
+  "doi": "10.1590/0103-6351/2443",
+  "year": "2015",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:portuguese"
+  ]
+ },
+ {
+  "doi": "10.1590/s0101-31572013000300007",
+  "year": "2013",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:portuguese"
+  ]
+ },
+ {
+  "doi": "10.12012/cjoe2024-0047",
+  "year": "2024",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:chinese"
+  ]
+ },
+ {
+  "doi": "10.3406/recod.1997.957",
+  "year": "1997",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:french"
+  ]
+ },
+ {
+  "doi": "10.14267/veztud.2026.03.04",
+  "year": "2026",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:hungarian"
+  ]
+ },
+ {
+  "doi": "10.1007/bf01720522",
+  "year": "1993",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:german"
+  ]
+ },
+ {
+  "doi": "10.1590/s0104-530x2013000200012",
+  "year": "2013",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:portuguese"
+  ]
+ },
+ {
+  "doi": "10.20180/j.qjem.2024.02.08",
+  "year": "2024",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:chinese"
+  ]
+ },
+ {
+  "doi": "10.3917/entre1.pr.0043",
+  "year": "2022",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:french"
+  ]
+ },
+ {
+  "doi": "10.1080/02102412.2002.10779471",
+  "year": "2002",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:spanish"
+  ]
+ },
+ {
+  "doi": "10.20069/j.cnki.djkx.202506010",
+  "year": "2025",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:chinese"
+  ]
+ },
+ {
+  "doi": "10.20069/j.cnki.djkx.202504009",
+  "year": "2025",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:chinese"
+  ]
+ },
+ {
+  "doi": "10.1590/s0104-530x2013000200013",
+  "year": "2013",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:portuguese"
+  ]
+ },
+ {
+  "doi": "10.3917/reof.101.0421",
+  "year": "2007",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:french"
+  ]
+ },
+ {
+  "doi": "10.13587/j.cnki.jieem.2021.01.002",
+  "year": "2021",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:chinese"
+  ]
+ },
+ {
+  "doi": "10.12804/rev.econ.rosario.18.02.2015.04",
+  "year": "2015",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:spanish"
+  ]
+ },
+ {
+  "doi": "10.1590/s0104-530x2014000100006",
+  "year": "2014",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:portuguese"
+  ]
+ },
+ {
+  "doi": "10.1111/1540-5982.00005",
+  "year": "2003",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:french"
+  ]
+ },
+ {
+  "doi": "10.12012/cjoe2020-0034",
+  "year": "2022",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:chinese"
+  ]
+ },
+ {
+  "doi": "10.51176/1997-9967-2023-1-272-286",
+  "year": "2023",
+  "source": "scopus_only",
+  "exclusion_reasons": [
+   "idioma:russian"
+  ]
+ },
+ {
+  "doi": null,
+  "year": "2011",
+  "source": "wos_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:russian"
+  ]
+ },
+ {
+  "doi": null,
+  "year": "2010",
+  "source": "wos_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:croatian"
+  ]
+ },
+ {
+  "doi": null,
+  "year": "2012",
+  "source": "wos_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:czech"
+  ]
+ },
+ {
+  "doi": null,
+  "year": "2015",
+  "source": "wos_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:turkish"
+  ]
+ },
+ {
+  "doi": null,
+  "year": "2010",
+  "source": "wos_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:portuguese"
+  ]
+ },
+ {
+  "doi": null,
+  "year": "2013",
+  "source": "wos_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:croatian"
+  ]
+ },
+ {
+  "doi": null,
+  "year": "2022",
+  "source": "wos_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:polish"
+  ]
+ },
+ {
+  "doi": null,
+  "year": "2006",
+  "source": "wos_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:spanish"
+  ]
+ },
+ {
+  "doi": null,
+  "year": "2011",
+  "source": "wos_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:polish"
+  ]
+ },
+ {
+  "doi": null,
+  "year": "2016",
+  "source": "wos_only_nodoi",
+  "exclusion_reasons": [
+   "sin_resumen",
+   "idioma:french"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2022",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:chinese"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2020",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:french"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2015",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:spanish"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2017",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:portuguese"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2015",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:russian"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2013",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:spanish"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2014",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:russian"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2015",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:spanish"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2017",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:spanish"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2014",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:spanish"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2003",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:slovak"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2005",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:japanese"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2010",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:portuguese"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2001",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:french"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2009",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:german"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2008",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:serbian"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2002",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:japanese"
+  ]
+ },
+ {
+  "doi": "",
+  "year": "2005",
+  "source": "scopus_only_nodoi",
+  "exclusion_reasons": [
+   "idioma:japanese"
+  ]
+ }
+]

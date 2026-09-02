@@ -117,6 +117,8 @@ aproximada sobre grafos grandes, no un defecto del pipeline, y se documenta
 aquí para que quede trazable en vez de silenciada. Ejecute
 `scripts/check_reproducibility.py` para repetir esta verificación.
 
+Numeración de figuras: sigue el orden de aparición en la monografía (Figura 2.3 = estratificación Tree of Science; 2.4 = caracterización de clústeres; 2.5 = matriz de brechas; 2.6 = brecha teoría-práctica).
+
 ## Cómo verificar las cifras del capítulo sin volver a ejecutar nada
 
 Todas las cifras, tablas y figuras del Capítulo 2 son reconstruibles
@@ -130,9 +132,9 @@ capítulo:
 cd figures
 python3 fig_2_1_prisma.py   # requiere solo los conteos documentados en el propio script
 python3 fig_2_2_temporal.py
-python3 fig_2_3_clusters.py
-python3 fig_2_4_gap_matrix.py
-python3 fig_2_5_tos.py
+python3 fig_2_3_tos.py
+python3 fig_2_4_clusters.py
+python3 fig_2_5_gap_matrix.py
 python3 fig_2_6_brecha.py
 python3 fig_1_4_brecha_diseno.py
 ```

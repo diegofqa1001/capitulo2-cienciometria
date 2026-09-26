@@ -1,4 +1,4 @@
-"""Figura 2.4 — Matriz divergente de brechas estructurales entre clústeres (Burt, 1992)."""
+"""Figura 2.5 — Matriz divergente de brechas estructurales entre clústeres (Burt, 1992)."""
 import sys
 sys.path.insert(0, '.')
 import json
@@ -64,7 +64,7 @@ for i in range(n):
             lum = 0.299*rgb[0] + 0.587*rgb[1] + 0.114*rgb[2]
             txt_color = 'white' if lum < 0.62 else INK_PRIMARY
             flag = ' *' if v > 1.5 else ''
-            ax.text(x + 0.5, y + 0.5, f'{v:.2f}{flag}', ha='center', va='center', fontsize=11.5,
+            ax.text(x + 0.5, y + 0.5, f'{coma(v)}{flag}', ha='center', va='center', fontsize=11.5,
                     color=txt_color, family='Poppins', fontweight='bold', zorder=3)
 
 ax.set_xlim(0, n)
@@ -85,7 +85,7 @@ grad_ax.imshow(grad, aspect='auto', cmap=DIV_CMAP, extent=[vmin, vmax, 0, 1])
 grad_ax.set_yticks([])
 grad_ax.set_xscale('log')
 grad_ax.set_xticks([vmin, 1, vmax])
-grad_ax.set_xticklabels([f'{vmin:.2f}\nintegración', '1,0\nsin brecha', f'{vmax:.2f}\nbrecha significativa'],
+grad_ax.set_xticklabels([f'{coma(vmin)}\nintegración', '1,0\nsin brecha', f'{coma(vmax)}\nbrecha significativa'],
                          fontsize=7.6, family='Poppins', color=INK_SECONDARY)
 grad_ax.tick_params(length=0)
 for s in grad_ax.spines.values():
@@ -94,7 +94,7 @@ for s in grad_ax.spines.values():
 fig.text(0.5, 0.085, 'gap$_{ij}$ = (f$_i$ · f$_j$ / N) / cooc$_{ij}$     ·     * brecha significativa (> 1,5)     ·     S/C = sin co-ocurrencia observada',
          ha='center', fontsize=8.0, color=INK_MUTED, family='Poppins')
 
-title_block(fig, 'Figura 2.4 · Brechas estructurales entre clústeres temáticos',
+title_block(fig, 'Figura 2.5 · Brechas estructurales entre clústeres temáticos',
             '8 de 10 pares de clústeres muestran una brecha significativa (Burt, 1992); C2–C3 es la única integración',
             x=0.10, y=0.975, sub_y=0.935)
 source_note(fig, 'Fuente: elaboración propia. Puntuación de brecha calculada sobre palabra clave dominante y exclusiva por clúster (N = 3.643).', y=0.025)

@@ -19,12 +19,12 @@ plt.rcParams['font.family'] = 'Poppins'
 plt.rcParams['font.size'] = 11
 
 # --- Paleta categórica (orden fijo, nunca ciclado) ---
-CAT = {
-    'C1': '#2a78d6',  # azul
-    'C2': '#eb6834',  # naranja
-    'C3': '#1baf7a',  # aqua
-    'C4': '#eda100',  # amarillo
-    'C5': '#e87ba4',  # magenta
+CAT = {  # paleta Okabe-Ito
+    'C1': '#0072B2',  # azul
+    'C2': '#E69F00',  # naranja
+    'C3': '#009E73',  # verde azulado
+    'C4': '#D55E00',  # bermellón
+    'C5': '#CC79A7',  # púrpura rojizo
 }
 CAT_ORDER = ['C1', 'C2', 'C3', 'C4', 'C5']
 
@@ -37,14 +37,14 @@ BASELINE = '#c3c2b7'
 SURFACE = '#fcfcfb'
 
 # --- Secuencial (un solo tono, azul, claro->oscuro) ---
-SEQ_BLUE = ['#cde2fb', '#9ec5f4', '#5598e7', '#2a78d6', '#184f95', '#0d366b']
+SEQ_BLUE = ['#d6e8f5', '#a8cbe9', '#6fa6d8', '#3f87c4', '#0072B2', '#004e7a']  # un solo tono: azul Okabe-Ito
 SEQ_BLUE_CMAP = LinearSegmentedColormap.from_list('seq_blue', SEQ_BLUE)
 
 # --- Divergente (azul <-> rojo, punto medio gris neutro) ---
-DIV_BLUE = '#184f95'
+DIV_BLUE = '#0072B2'
 DIV_MID = '#f0efec'
-DIV_RED = '#b32e2d'
-DIV_CMAP = LinearSegmentedColormap.from_list('div_blue_red', [DIV_BLUE, '#7fa8d8', DIV_MID, '#e79a91', DIV_RED])
+DIV_RED = '#D55E00'
+DIV_CMAP = LinearSegmentedColormap.from_list('div_blue_red', [DIV_BLUE, '#7fb2d6', DIV_MID, '#ebae80', DIV_RED])
 
 # --- Estado ---
 STATUS_GOOD = '#0ca30c'
@@ -56,6 +56,11 @@ def new_fig(w=7.5, h=5.0):
     fig.patch.set_facecolor('white')
     ax.set_facecolor('white')
     return fig, ax
+
+
+def coma(x, nd=2):
+    """Formato numérico en español: coma decimal."""
+    return f'{x:.{nd}f}'.replace('.', ',')
 
 
 def style_axes(ax, hide_spines=('top', 'right'), grid_axis=None):
@@ -71,7 +76,14 @@ def style_axes(ax, hide_spines=('top', 'right'), grid_axis=None):
         ax.set_axisbelow(True)
 
 
+MOSTRAR_TITULOS = False
+
+
 def title_block(ax_or_fig, title, subtitle=None, x=0.0, y=1.06, sub_y=1.015):
+    # El título y la fuente van en el pie de figura de la monografía (APA 7):
+    # la figura no los repite.
+    if not MOSTRAR_TITULOS:
+        return
     kwargs = {}
     if hasattr(ax_or_fig, 'transAxes'):
         kwargs['transform'] = ax_or_fig.transAxes
@@ -86,4 +98,6 @@ def title_block(ax_or_fig, title, subtitle=None, x=0.0, y=1.06, sub_y=1.015):
 
 
 def source_note(fig, text, x=0.02, y=0.01):
+    if not MOSTRAR_TITULOS:
+        return
     fig.text(x, y, text, fontsize=7.8, color=INK_MUTED, ha='left', family='Poppins')

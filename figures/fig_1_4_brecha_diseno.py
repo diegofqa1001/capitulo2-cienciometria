@@ -131,24 +131,14 @@ axR.annotate('Arquitectura OWA-difusa\n(esta tesis)', xy=p_tesis, xytext=(p_tesi
              arrowprops=dict(arrowstyle='-', color=CAT['C1'], linewidth=1.3),
              path_effects=[pe.withStroke(linewidth=3, foreground='white')])
 
-axR.text(5.0, 0.35, 'Decisión de diseño —no deducida del corpus—: se prioriza sensibilidad\n'
+axR.text(5.0, 0.35, 'Decisión de diseño: se prioriza sensibilidad\n'
                      'conductual e interpretabilidad auditable (Rudin, 2019), como puente\n'
-                     'hacia el núcleo teórico bajo trazabilidad regulatoria (MiFID II; EU AI Act)',
+                     'hacia el núcleo teórico bajo trazabilidad regulatoria (MiFID II; Reglamento de IA de la UE)',
           ha='center', fontsize=8.0, color=INK_SECONDARY, family='Poppins', linespacing=1.4)
 
 axR.text(0.0, 10.55, 'B. El posicionamiento arquitectónico de la tesis', ha='left', fontsize=12.5,
           fontweight='medium', color=INK_PRIMARY, family='Poppins', transform=axR.transData)
 
-fig.text(0.02, 0.985, 'Figura 1.4 · De la brecha teoría-práctica al posicionamiento arquitectónico de la tesis',
-          fontsize=13.5, fontweight='medium', color=INK_PRIMARY, family='Poppins', ha='left')
-fig.text(0.02, 0.945, 'El hallazgo empírico del Capítulo 2 (panel A) motiva —sin determinarla lógicamente— '
-                       'la decisión de diseño del motor OWA-difuso (panel B)',
-          fontsize=9.5, color=INK_MUTED, family='Poppins', ha='left')
-fig.text(0.02, 0.012, 'Fuente: elaboración propia. Panel A: cartografía cienciométrica del Capítulo 2 '
-                       '(N = 3.643 registros; puntuación de brecha de Burt, 1992; ver Figura 2.6). '
-                       'Panel B: síntesis conceptual del criterio de diseño desarrollado en el Capítulo 4 '
-                       'y discutido en la Sección 9.3.', fontsize=7.6, color=INK_MUTED, family='Poppins')
-
-plt.tight_layout(rect=[0.01, 0.03, 0.99, 0.90])
+plt.tight_layout(rect=[0.01, 0.01, 0.99, 0.97])
 plt.savefig('fig_1_4_brecha_diseno.png', dpi=300, bbox_inches='tight', facecolor='white')
 print('OK fig_1_4_brecha_diseno.png')

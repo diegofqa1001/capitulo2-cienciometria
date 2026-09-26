@@ -1,4 +1,4 @@
-"""Figura 2.3 — Caracterización de los cinco macro-clústeres temáticos."""
+"""Figura 2.4 — Caracterización de los cinco macro-clústeres temáticos."""
 import sys
 sys.path.insert(0, '.')
 import json
@@ -55,7 +55,7 @@ for c, x, y, r in zip(clusters, xs, ys, ranks):
     ax.annotate(f"n = {c['n_docs']}", xy=(x, y), xytext=(x + dx * 0.012, y + dy - 5.4),
                 ha='center', va='center', fontsize=7.4, color=INK_MUTED, family='Poppins')
 
-title_block(fig, 'Figura 2.3 · Caracterización de los cinco macro-clústeres temáticos',
+title_block(fig, 'Figura 2.4 · Caracterización de los cinco macro-clústeres temáticos',
             'Tamaño de burbuja = número de documentos · detección de comunidades de Louvain (resolución 0,5; Q = 0,544)',
             x=0.07, y=0.965, sub_y=0.925)
 source_note(fig, 'Fuente: elaboración propia a partir del corpus final (N = 3.643) y del acoplamiento bibliográfico (OpenAlex, referenced_works).')

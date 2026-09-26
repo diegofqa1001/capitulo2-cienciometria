@@ -7,12 +7,12 @@ from style import *
 import matplotlib.patches as mpatches
 from matplotlib.patches import FancyArrowPatch
 
-with open('../data/final/corpus_final.json', encoding='utf-8') as f:
+with open('../data/final/corpus_final_metadatos.json', encoding='utf-8') as f:
     corpus = json.load(f)
 
 years = []
 for r in corpus:
-    y = r.get('Year')
+    y = r.get('year')
     try:
         y = int(str(y).strip())
         if 1900 < y < 2027:
@@ -71,7 +71,7 @@ for i, lab in enumerate(labels):
         tick_idx.append(i); tick_lab.append(lab)
     else:
         y = int(lab)
-        if y % 5 == 0 or y == PARTIAL_YEAR:
+        if (y % 5 == 0 and y != 1995 and y != 2025) or y == PARTIAL_YEAR:
             tick_idx.append(i); tick_lab.append(lab)
 ax.set_xticks(tick_idx)
 ax.set_xticklabels(tick_lab, fontsize=8.8)
@@ -103,7 +103,7 @@ title_block(fig, 'Figura 2.2 · Distribución temporal del corpus final (N = 3.6
             'Crecimiento sostenido con aceleración marcada a partir de 2016',
             x=0.045, y=0.965, sub_y=0.915)
 source_note(fig, 'Fuente: elaboración propia a partir del corpus final Web of Science + Scopus (corte: 21 de agosto de 2026). '
-                  'Los 29 años previos a 1995 (97 registros) se agregan en el bucket "≤1994" por su baja densidad individual.')
+                  'Los 29 años previos a 1995 (97 registros) se agregan en la barra «≤1994» por su baja densidad individual.')
 
 plt.tight_layout(rect=[0.01, 0.03, 0.99, 0.86])
 plt.savefig('fig_2_2_temporal.png', dpi=300, bbox_inches='tight', facecolor='white')

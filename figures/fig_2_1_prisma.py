@@ -85,9 +85,6 @@ side_note(8.35, (ROW3_CY - ROW3_H/2 + 3.175) / 2, '−66 excluidos:\n60 idioma �
 box(5.0, 2.55, 'INCLUSIÓN · CORPUS FINAL', '3.643', 'registros únicos analizados', CAT['C4'],
     h=1.25, text_color=INK_PRIMARY)
 
-fig.text(0.5, 0.965, 'Figura 2.1', ha='center', fontsize=10.5, color=INK_MUTED, family='Poppins')
-fig.text(0.5, 0.935, 'Flujo PRISMA de conformación del corpus cienciométrico',
-         ha='center', fontsize=13.5, color=INK_PRIMARY, family='Poppins', fontweight='medium')
 source_note(fig, 'Fuente: elaboración propia a partir de las extracciones de Web of Science y Scopus (21 de agosto de 2026).')
 
 plt.tight_layout(rect=[0, 0.02, 1, 0.90])

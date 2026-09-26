@@ -20,7 +20,7 @@ labels = {
     1: 'C1\nOpciones reales',
     2: 'C2\nAmbigüedad',
     3: 'C3\nOptim. robusta',
-    4: 'C4\nFuzzy MCDM',
+    4: 'C4\nMCDM difuso',
     5: 'C5\nConectividad',
 }
 
@@ -48,14 +48,14 @@ for j, g in c1_gaps.items():
     ax.add_patch(a)
     frac = {2: 0.42, 3: 0.42, 4: 0.42, 5: 0.30}[j]
     mx, my = (pos[1][0]*(1-frac) + pos[j][0]*frac), (pos[1][1]*(1-frac) + pos[j][1]*frac)
-    ax.text(mx, my, f'{g:.2f}', ha='center', va='center', fontsize=8.3, color=DIV_RED,
+    ax.text(mx, my, coma(g), ha='center', va='center', fontsize=8.3, color=DIV_RED,
             family='Poppins', fontweight='bold', zorder=5,
             path_effects=[pe.withStroke(linewidth=2.6, foreground='white')])
 
 # --- Integración C2-C3 (hallazgo secundario) ---
 a = FancyArrowPatch(pos[2], pos[3], arrowstyle='-', linewidth=5.2, color=DIV_BLUE, zorder=2)
 ax.add_patch(a)
-ax.text((pos[2][0]+pos[3][0])/2 + 0.55, (pos[2][1]+pos[3][1])/2, '0.37\nintegración',
+ax.text((pos[2][0]+pos[3][0])/2 + 0.55, (pos[2][1]+pos[3][1])/2, '0,37\nintegración',
         ha='left', va='center', fontsize=8.3, color=DIV_BLUE, family='Poppins', fontweight='bold',
         linespacing=1.3, zorder=5)
 

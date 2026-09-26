@@ -67,7 +67,7 @@ components = sorted(nx.connected_components(G), key=len, reverse=True)
 print(f'Componentes conexas: {len(components)}; top 5 tamaños: {[len(c) for c in components[:5]]}')
 
 import networkx.algorithms.community as nx_comm
-RESOLUTION = 0.5  # calibrado para granularidad macro-tematica (decision con Diego, 2026-08-22)
+RESOLUTION = 0.5  # resolucion fijada para granularidad macro-tematica (ver scripts/06b_resolucion_louvain.py)
 communities = nx_comm.louvain_communities(G, weight='weight', seed=42, resolution=RESOLUTION)
 communities.sort(key=len, reverse=True)
 modularity = nx_comm.modularity(G, communities, weight='weight')

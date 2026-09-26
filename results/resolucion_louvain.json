@@ -1,0 +1,45 @@
+{
+  "networkx": "3.6.1",
+  "semilla": 42,
+  "nodos": 3643,
+  "documentos_conectados": 3033,
+  "aristas": 80160,
+  "resoluciones": {
+    "0.5": {
+      "modularidad": 0.5444,
+      "n_comunidades_total": 625,
+      "n_comunidades_10_o_mas_docs": 5,
+      "tamanos_10_o_mas": [
+        1202,
+        989,
+        381,
+        279,
+        161
+      ],
+      "docs_en_comunidades_10_o_mas": 3012,
+      "pct_corpus": 82.68,
+      "pct_conectados": 99.31,
+      "coincide_con_publicada": true
+    },
+    "1.0": {
+      "modularidad": 0.5857,
+      "n_comunidades_total": 630,
+      "n_comunidades_10_o_mas_docs": 10,
+      "tamanos_10_o_mas": [
+        545,
+        530,
+        340,
+        336,
+        311,
+        298,
+        277,
+        195,
+        121,
+        56
+      ],
+      "docs_en_comunidades_10_o_mas": 3009,
+      "pct_corpus": 82.6,
+      "pct_conectados": 99.21
+    }
+  }
+}

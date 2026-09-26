@@ -87,6 +87,7 @@ capitulo2-cienciometria/
 | `corpus_excluidos_metadatos.json` | 66 registros excluidos en el cribado de calidad: DOI, año, fuente, motivo | Derivado propio |
 | `openalex_data.json` | Metadatos OpenAlex (3.439 DOIs resueltos): referencias citadas, citas recibidas, año, título | OpenAlex (CC0) |
 | `louvain_communities.json` | Asignación de clúster y modularidad de la red de acoplamiento bibliográfico | Derivado propio |
+| `louvain_communities_gamma1.json` | Partición de Louvain con resolución 1,0 (diez comunidades de diez o más documentos; Q = 0,586), para auditar la elección de la resolución 0,5 | Derivado propio (`scripts/06b_resolucion_louvain.py`) |
 | `cluster_summaries.json` | Tamaño, año promedio, citas promedio y términos dominantes por clúster | Derivado propio |
 | `tos_centralities.json` | Grado de entrada/salida, cercanía y centralidad de intermediación por nodo | Derivado propio |
 | `tos_classification.json` | Estratificación raíces/tronco/hojas (Tree of Science) | Derivado propio |
@@ -98,7 +99,7 @@ capitulo2-cienciometria/
 2. **Deduplicación cruzada por DOI** — 5.188 → 3.709 registros únicos.
 3. **Cribado de calidad** (documento revisado por pares, metadatos completos) — 3.709 → 3.643 (66 excluidos).
 4. **Enriquecimiento OpenAlex** — resolución de referencias citadas y citas recibidas para 3.439 de los 3.643 DOIs.
-5. **Red de acoplamiento bibliográfico + Louvain** — cinco macro-clústeres temáticos (modularidad = 0,544).
+5. **Red de acoplamiento bibliográfico + Louvain** — cinco macro-clústeres temáticos (modularidad = 0,544). Algoritmo de Louvain estándar (Blondel et al., 2008) en la implementación `louvain_communities` de NetworkX (≥ 3.1), resolución 0,5 y semilla 42. `scripts/06b_resolucion_louvain.py` verifica que la partición publicada se reproduce, calcula la partición con resolución 1,0 y escribe `results/resolucion_louvain.json`.
 6. **Tree of Science** — estratificación raíces/tronco/hojas sobre la red de citación (corpus + referencias externas).
 7. **Análisis de brechas estructurales** (Burt, 1992) — 8 de 10 pares de clústeres con brecha significativa.
 

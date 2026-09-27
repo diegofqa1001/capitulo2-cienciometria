@@ -1,0 +1,11 @@
+par,kw_i,kw_j,f_i,f_j,observada,esperada,gap_score,supera_umbral_1_5,direccion,p_poisson,p_poisson_holm,p_hipergeometrica,significativa_5pct,significativa_holm_5pct
+C2-C5,ambiguity,connectedness,416,44,0,5.024,inf,True,brecha,0.00657533,0.0367816,0.00465895,True,True
+C4-C5,fuzzy,connectedness,189,44,0,2.283,inf,True,brecha,0.102005,0.306015,0.0945708,False,False
+C1-C4,firms,fuzzy,596,189,4,30.921,7.73,True,brecha,1.62204e-09,1.29763e-08,8.59489e-11,True,True
+C1-C5,firms,connectedness,596,44,1,7.198,7.198,True,brecha,0.00613027,0.0367816,0.00356476,True,True
+C1-C2,firms,ambiguity,596,416,15,68.058,4.537,True,brecha,8.42038e-15,7.57834e-14,7.83277e-18,True,True
+C3-C4,robust,fuzzy,557,189,17,28.897,1.7,True,brecha,0.012052,0.0482078,0.00638875,True,True
+C3-C5,robust,connectedness,557,44,4,6.727,1.682,True,brecha,0.199341,0.398681,0.174987,False,False
+C1-C3,firms,robust,596,557,58,91.126,1.571,True,brecha,0.000135653,0.000949569,1.09668e-05,True,True
+C2-C4,ambiguity,fuzzy,416,189,21,21.582,1.028,False,brecha,0.507335,0.507335,0.50317,False,False
+C2-C3,ambiguity,robust,416,557,172,63.605,0.37,False,integracion,2.79191e-29,2.79191e-28,7.6678e-44,True,True

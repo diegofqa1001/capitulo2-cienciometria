@@ -1,0 +1,8 @@
+{
+  "N_corpus": 3643,
+  "documentos_con_openalex_id": 3439,
+  "aristas": 7019,
+  "nodos_aislados": 2573,
+  "porcentaje_aislados": 70.63,
+  "networkx": "3.6.1"
+}

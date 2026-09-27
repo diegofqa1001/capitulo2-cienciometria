@@ -20,7 +20,7 @@ Capítulo 2. Comparten protocolo metodológico (PRISMA
 
 ## Qué encuentra aquí un lector, jurado o par evaluador
 
-- El pipeline completo, en diez pasos numerados, desde el export crudo de
+- El pipeline completo, en once pasos numerados, desde el export crudo de
   Web of Science/Scopus hasta la cartografía de clústeres y brechas.
 - Los datos derivados que sustentan cada cifra, tabla y figura del capítulo.
 - Las seis figuras del Capítulo 2 (más la Figura 1.4 del Capítulo 1, que se
@@ -64,14 +64,18 @@ capitulo2-cienciometria/
 │   ├── 01_parse_wos.py              # requiere export propio de WoS (no incluido)
 │   ├── 02_parse_scopus.py           # requiere export propio de Scopus (no incluido)
 │   ├── 03_merge_dedup.py            # fusión + deduplicación por DOI
-│   ├── 04_quality_screen.py         # cribado de calidad (par revisado, metadatos completos)
+│   ├── 04_quality_screen.py         # cribado de calidad (idioma, resumen, retractación)
 │   ├── 05_fetch_openalex.py         # enriquecimiento con OpenAlex (API abierta) — re-ejecutable
 │   ├── 06_build_network_coupling.py # red de acoplamiento bibliográfico — re-ejecutable
+│   ├── 06b_resolucion_louvain.py    # partición con resolución 1,0 y verificación de la 0,5 — re-ejecutable
+│   ├── 06c_cocitacion.py            # red de co-citación estricta (alternativa descartada) — re-ejecutable
 │   ├── 07_characterize_clusters.py  # requiere título/resumen (no incluidos)
 │   ├── 08_tree_of_science.py        # centralidades de red — re-ejecutable
 │   ├── 09_tos_classify.py           # estratificación raíces/tronco/hojas — re-ejecutable
 │   ├── 10_gap_analysis.py           # requiere palabras clave (no incluidas)
+│   ├── 11_prueba_brechas_poisson.py # prueba de Poisson/exacta de cada brecha — re-ejecutable
 │   └── check_reproducibility.py     # compara una re-ejecución contra data/final/
+├── results/             salidas de los pasos 6b, 6c y 11 (resolucion_louvain.json, cocitacion.json, prueba_brechas.csv)
 ├── data/
 │   ├── raw/            (vacío — el lector coloca aquí sus propios exports WoS/Scopus)
 │   ├── intermediate/   (se genera al ejecutar los pasos 1-4)
@@ -97,11 +101,12 @@ capitulo2-cienciometria/
 
 1. **Extracción** — 2.529 registros únicos internos de Scopus + 2.659 de Web of Science = 5.188 identificados (Figura 2.1).
 2. **Deduplicación cruzada por DOI** — 5.188 → 3.709 registros únicos.
-3. **Cribado de calidad** (documento revisado por pares, metadatos completos) — 3.709 → 3.643 (66 excluidos).
+3. **Cribado de calidad** (idioma distinto del inglés, ausencia de resumen, retractación) — 3.709 → 3.643 (66 excluidos: 60 por idioma, 4 sin resumen, 2 retractados; un registro reúne idioma francés y ausencia de resumen y se contabiliza en la fila de ausencia de resumen).
 4. **Enriquecimiento OpenAlex** — resolución de referencias citadas y citas recibidas para 3.439 de los 3.643 DOIs.
-5. **Red de acoplamiento bibliográfico + Louvain** — cinco macro-clústeres temáticos (modularidad = 0,544). Algoritmo de Louvain estándar (Blondel et al., 2008) en la implementación `louvain_communities` de NetworkX (≥ 3.1), resolución 0,5 y semilla 42. `scripts/06b_resolucion_louvain.py` verifica que la partición publicada se reproduce, calcula la partición con resolución 1,0 y escribe `results/resolucion_louvain.json`.
+5. **Red de acoplamiento bibliográfico + Louvain** (la alternativa de co-citación estricta deja el 70,6 % de los nodos aislados; `scripts/06c_cocitacion.py` escribe `results/cocitacion.json`) — cinco macro-clústeres temáticos (modularidad = 0,544). Algoritmo de Louvain estándar (Blondel et al., 2008) en la implementación `louvain_communities` de NetworkX (≥ 3.1), resolución 0,5 y semilla 42. `scripts/06b_resolucion_louvain.py` verifica que la partición publicada se reproduce, calcula la partición con resolución 1,0 y escribe `results/resolucion_louvain.json`.
 6. **Tree of Science** — estratificación raíces/tronco/hojas sobre la red de citación (corpus + referencias externas).
-7. **Análisis de brechas estructurales** (Burt, 1992) — 8 de 10 pares de clústeres con brecha significativa.
+7. **Análisis de brechas estructurales** (Burt, 1992) — 8 de 10 pares de clústeres con índice superior al umbral descriptivo de 1,5.
+8. **Contraste de las brechas** — `scripts/11_prueba_brechas_poisson.py` compara la co-ocurrencia observada con la esperada bajo independencia (prueba de Poisson unilateral, con prueba hipergeométrica exacta y corrección de Holm) y escribe `results/prueba_brechas.csv`: seis de los ocho pares por encima del umbral se apartan de la independencia con p < 0,05, incluidas las cuatro brechas de C1 (p ≤ 0,006); C3–C5 (p = 0,20) y C4–C5 (p = 0,10) no lo hacen. La integración C2–C3 tiene p < 0,001.
 
 ## Nota de reproducibilidad conocida
 
@@ -114,8 +119,7 @@ y el conjunto de raíces del Tree of Science; el conjunto de nodos en el
 margen del percentil de corte tronco/hojas varió en un 9% (40 de 465 nodos),
 sin alterar ningún conteo agregado ni ninguna cifra reportada en el
 Capítulo 2. Es una propiedad conocida de la centralidad de intermediación
-aproximada sobre grafos grandes, no un defecto del pipeline, y se documenta
-aquí para que quede trazable en vez de silenciada. Ejecute
+aproximada sobre grafos grandes y se documenta aquí para que quede trazable. Ejecute
 `scripts/check_reproducibility.py` para repetir esta verificación.
 
 Numeración de figuras: sigue el orden de aparición en la monografía (Figura 2.3 = estratificación Tree of Science; 2.4 = caracterización de clústeres; 2.5 = matriz de brechas; 2.6 = brecha teoría-práctica).

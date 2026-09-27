@@ -9,6 +9,14 @@ import matplotlib.patches as mpatches
 with open('../data/final/gap_analysis_v2.json', encoding='utf-8') as f:
     data = json.load(f)
 
+# p-valores de Poisson del paso 11 (scripts/11_prueba_brechas_poisson.py)
+import csv
+pval = {}
+with open('../results/prueba_brechas.csv', encoding='utf-8') as f:
+    for r in csv.DictReader(f):
+        a, b = [int(x[1:]) for x in r['par'].split('-')]
+        pval[(a, b)] = pval[(b, a)] = float(r['p_poisson'])
+
 labels = {1: 'C1', 2: 'C2', 3: 'C3', 4: 'C4', 5: 'C5'}
 n = 5
 mat = np.full((n, n), np.nan)
@@ -54,8 +62,11 @@ for i in range(n):
         if inf_mask[i, j]:
             ax.add_patch(mpatches.Rectangle((x, y), cell, cell, facecolor=DIV_RED, edgecolor='white',
                                              linewidth=2, zorder=2, hatch='xxxx', alpha=0.92))
-            ax.text(x + 0.5, y + 0.5, 'S/C', ha='center', va='center', fontsize=10.5,
-                    color='white', family='Poppins', fontweight='bold', zorder=3)
+            # S/C: indice infinito, siempre por encima del umbral de 1,5 (lleva *)
+            dag = '†' if pval[(i+1, j+1)] < 0.05 else ''
+            ax.text(x + 0.5, y + 0.5, f'S/C *{dag}', ha='center', va='center', fontsize=10.5,
+                    color='white', family='Poppins', fontweight='bold', zorder=3,
+                    bbox=dict(boxstyle='round,pad=0.25', facecolor=DIV_RED, edgecolor='none'))
         elif not np.isnan(v):
             col = color_for(v)
             ax.add_patch(mpatches.Rectangle((x, y), cell, cell, facecolor=col, edgecolor='white', linewidth=2, zorder=2))
@@ -63,7 +74,8 @@ for i in range(n):
             rgb = col[:3] if isinstance(col, tuple) else col
             lum = 0.299*rgb[0] + 0.587*rgb[1] + 0.114*rgb[2]
             txt_color = 'white' if lum < 0.62 else INK_PRIMARY
-            flag = ' *' if v > 1.5 else ''
+            marks = ('*' if v > 1.5 else '') + ('†' if pval[(i+1, j+1)] < 0.05 else '')
+            flag = f' {marks}' if marks else ''
             ax.text(x + 0.5, y + 0.5, f'{coma(v)}{flag}', ha='center', va='center', fontsize=11.5,
                     color=txt_color, family='Poppins', fontweight='bold', zorder=3)
 
@@ -84,18 +96,20 @@ grad = np.linspace(-1, 1, 256).reshape(1, -1)
 grad_ax.imshow(grad, aspect='auto', cmap=DIV_CMAP, extent=[vmin, vmax, 0, 1])
 grad_ax.set_yticks([])
 grad_ax.set_xscale('log')
+from matplotlib.ticker import NullLocator
+grad_ax.xaxis.set_minor_locator(NullLocator())
 grad_ax.set_xticks([vmin, 1, vmax])
-grad_ax.set_xticklabels([f'{coma(vmin)}\nintegración', '1,0\nsin brecha', f'{coma(vmax)}\nbrecha significativa'],
+grad_ax.set_xticklabels([f'{coma(vmin)}\nintegración', '1,0\nsin brecha', f'{coma(vmax)}\nbrecha máxima'],
                          fontsize=7.6, family='Poppins', color=INK_SECONDARY)
 grad_ax.tick_params(length=0)
 for s in grad_ax.spines.values():
     s.set_visible(False)
 
-fig.text(0.5, 0.085, 'gap$_{ij}$ = (f$_i$ · f$_j$ / N) / cooc$_{ij}$     ·     * brecha significativa (> 1,5)     ·     S/C = sin co-ocurrencia observada',
+fig.text(0.5, 0.085, 'gap$_{ij}$ = (f$_i$ · f$_j$ / N) / cooc$_{ij}$   ·   * índice > 1,5   ·   † p < 0,05 (prueba de Poisson)   ·   S/C = sin co-ocurrencia observada',
          ha='center', fontsize=8.0, color=INK_MUTED, family='Poppins')
 
 title_block(fig, 'Figura 2.5 · Brechas estructurales entre clústeres temáticos',
-            '8 de 10 pares de clústeres muestran una brecha significativa (Burt, 1992); C2–C3 es la única integración',
+            '8 de 10 pares superan el umbral de 1,5 (6 con p < 0,05); C2–C3 es la única integración',
             x=0.10, y=0.975, sub_y=0.935)
 source_note(fig, 'Fuente: elaboración propia. Puntuación de brecha calculada sobre palabra clave dominante y exclusiva por clúster (N = 3.643).', y=0.025)
 

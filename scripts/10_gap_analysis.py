@@ -1,24 +1,17 @@
-"""Segunda versión del análisis de brechas -- CORRIGE un problema metodológico
-real detectado en gap_analysis.py (v1): esa versión definía el 'tema' de cada
-clúster como un CONJUNTO de 8 términos dominantes, y varios términos se
-repiten entre clústeres vecinos (p.ej. 'risk' y 'asset' aparecen tanto en C2
-como en C3; 'optimization', 'selection', 'programming' y 'problem' aparecen
-tanto en C3 como en C4). Con el umbral MIN_MATCH>=2, un documento podía
-'tocar' dos clústeres reutilizando el mismo término compartido más una sola
-palabra adicional de cada lado -- esto infla artificialmente la co-ocurrencia
-observada entre pares de clústeres que comparten vocabulario técnico, sin que
-eso refleje necesariamente una integración temática real.
+"""Análisis de brechas estructurales entre los cinco macro-clústeres (paso 10).
 
-v2 sigue de forma más literal la operacionalización del artículo original:
-"cociente entre la co-ocurrencia esperada y observada para PARES DE PALABRAS
-CLAVE de alta frecuencia pertenecientes a clústeres distintos" -- es decir,
-UNA palabra clave dominante y EXCLUSIVA por clúster (no un conjunto), evitando
-por construcción el problema de solapamiento léxico. Se usa el término de
-mayor score TF-IDF de cada clúster (rank 1 en cluster_summaries.json);
-los cinco resultan mutuamente exclusivos (ninguno aparece en la lista de
-términos de otro clúster), lo que garantiza que la co-ocurrencia medida
-refleje presencia conjunta real de ambos temas y no una palabra puente
-compartida."""
+Operacionalización: cociente entre la co-ocurrencia esperada bajo
+independencia y la observada para el par de palabras clave dominantes de dos
+clústeres distintos. Cada clúster se representa con UNA palabra clave, la de
+mayor peso TF-IDF (rank 1 en cluster_summaries.json), y se verifica que sea
+exclusiva: ninguna aparece en la lista de términos dominantes de otro
+clúster. Esa exclusividad evita que un término técnico compartido (p. ej.
+'risk' en C2 y C3, u 'optimization' en C3 y C4) infle la co-ocurrencia
+observada entre clústeres que comparten vocabulario sin compartir tema.
+
+El índice es un cociente con umbral descriptivo de 1,5; el contraste
+estadístico de cada par frente a la independencia se hace en el paso 11
+(scripts/11_prueba_brechas_poisson.py)."""
 
 from pathlib import Path
 
@@ -80,17 +73,17 @@ for i, j in combinations(sorted(keyword.keys()), 2):
 
 results.sort(key=lambda r: r['gap_score'], reverse=True)
 
-print(f'\n=== GAP SCORE v2 (palabra clave única y exclusiva por clúster, N={N}) ===')
-print('Fórmula: gap_ij = (f_i * f_j / N) / cooc_ij  |  umbral significativo: >1,5\n')
+print(f'\n=== ÍNDICE DE BRECHA (palabra clave única y exclusiva por clúster, N={N}) ===')
+print('Fórmula: gap_ij = (f_i * f_j / N) / cooc_ij  |  umbral descriptivo: >1,5\n')
 for r in results:
     i, j = r['par']
     gap_str = 'inf (sin co-ocurrencia)' if r['gap_score'] == float('inf') else f"{r['gap_score']:.3f}"
-    flag = ' *** BRECHA SIGNIFICATIVA ***' if (r['gap_score'] == float('inf') or r['gap_score'] > 1.5) else ''
+    flag = ' *** SUPERA EL UMBRAL 1,5 ***' if (r['gap_score'] == float('inf') or r['gap_score'] > 1.5) else ''
     print(f"  C{i}(\"{r['kw_i']}\")-C{j}(\"{r['kw_j']}\"): f_i={r['f_i']}, f_j={r['f_j']}, "
           f"cooc={r['cooc_ij']}, esperado={r['expected']:.2f}, gap={gap_str}{flag}")
 
 sig = [r for r in results if r['gap_score'] == float('inf') or r['gap_score'] > 1.5]
-print(f'\nTotal de brechas significativas (gap > 1,5): {len(sig)} de {len(results)} pares posibles')
+print(f'\nPares por encima del umbral (gap > 1,5): {len(sig)} de {len(results)} pares posibles')
 
 theme_labels = {
     1: 'opciones reales / inversión corporativa bajo incertidumbre',

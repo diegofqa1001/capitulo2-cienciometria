@@ -17,7 +17,7 @@ iteración interno de NetworkX sobre el grafo, que a su vez puede variar
 levemente entre entornos/versiones. En pruebas propias, esto reclasificó
 ~9% de los nodos en el margen del percentil de corte (40 de 465 nodos de
 "tronco") entre tronco y hojas, SIN alterar los conteos agregados
-(n_roots, n_trunk, n_leaves) ni ninguna cifra reportada en la Figura 2.5
+(n_roots, n_trunk, n_leaves) ni ninguna cifra reportada en la Figura 2.3
 o en el texto del capítulo. No es un defecto: es una propiedad conocida
 de los algoritmos de centralidad aproximada sobre grafos grandes, y se
 documenta aquí en vez de silenciarse.

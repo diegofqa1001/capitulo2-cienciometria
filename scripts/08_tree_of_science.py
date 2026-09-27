@@ -7,7 +7,7 @@ del artículo: raíces = alto out-degree + closeness (muchas obras influidas,
 posición central) y hojas = alto in-degree (construyen sobre mucho trabajo
 previo). Se agregan como nodos externos las referencias citadas por al
 menos 15 documentos del corpus (umbral elegido para mantener una proporción
-red-total/corpus similar a la del análisis original: ~1.17x)."""
+red-total/corpus similar a la del análisis Tree of Science de referencia: ~1.17x)."""
 
 from pathlib import Path
 

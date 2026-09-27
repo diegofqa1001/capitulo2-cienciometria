@@ -1,7 +1,8 @@
-"""Estratifica la red en raíces/tronco/hojas usando las MISMAS proporciones
-que reporta el artículo original (54/343/2745 sobre 3142 = 1,7%/10,9%/87,4%),
-aplicadas como percentiles sobre esta red nueva -- mantiene continuidad
-metodológica con el análisis ya defendido, en vez de inventar cortes nuevos."""
+"""Estratifica la red en raíces/tronco/hojas por percentiles. Los cortes
+(1,71 % / 10,91 % / 87,37 %, fracciones 54/3.142, 343/3.142 y 2.745/3.142)
+son parámetros fijos de estratificación que producen un núcleo fundacional
+reducido frente al conjunto de la red, en línea con la metáfora arbórea de
+Robledo et al. (2014)."""
 
 from pathlib import Path
 
@@ -35,7 +36,7 @@ out_deg_n = normalize(out_deg)
 closeness_n = normalize(closeness)
 root_score = {n: out_deg_n[n] + closeness_n[n] for n in all_nodes}
 
-# Proporciones del artículo original
+# Parámetros fijos de estratificación (fracciones 54/3.142 y 343/3.142)
 P_ROOTS = 54 / 3142
 P_TRUNK = 343 / 3142
 n_roots = round(P_ROOTS * N)

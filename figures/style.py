@@ -19,12 +19,12 @@ plt.rcParams['font.family'] = 'Poppins'
 plt.rcParams['font.size'] = 11
 
 # --- Paleta categórica (orden fijo, nunca ciclado) ---
-CAT = {  # paleta Okabe-Ito
-    'C1': '#0072B2',  # azul
-    'C2': '#E69F00',  # naranja
-    'C3': '#009E73',  # verde azulado
-    'C4': '#D55E00',  # bermellón
-    'C5': '#CC79A7',  # púrpura rojizo
+CAT = {  # paleta institucional (azul marino y grises)
+    'C1': '#1F3A5F',  # azul
+    'C2': '#8C8C8C',  # naranja
+    'C3': '#4F6D8F',  # verde azulado
+    'C4': '#3F3F3F',  # bermellón
+    'C5': '#8A7D72',  # púrpura rojizo
 }
 CAT_ORDER = ['C1', 'C2', 'C3', 'C4', 'C5']
 
@@ -37,18 +37,18 @@ BASELINE = '#c3c2b7'
 SURFACE = '#fcfcfb'
 
 # --- Secuencial (un solo tono, azul, claro->oscuro) ---
-SEQ_BLUE = ['#d6e8f5', '#a8cbe9', '#6fa6d8', '#3f87c4', '#0072B2', '#004e7a']  # un solo tono: azul Okabe-Ito
+SEQ_BLUE = ['#E3E8EF', '#C2CCD9', '#8C9DB4', '#55698A', '#1F3A5F', '#14243D']  # un solo tono: azul azul marino y grises
 SEQ_BLUE_CMAP = LinearSegmentedColormap.from_list('seq_blue', SEQ_BLUE)
 
 # --- Divergente (azul <-> rojo, punto medio gris neutro) ---
-DIV_BLUE = '#0072B2'
+DIV_BLUE = '#1F3A5F'
 DIV_MID = '#f0efec'
-DIV_RED = '#D55E00'
-DIV_CMAP = LinearSegmentedColormap.from_list('div_blue_red', [DIV_BLUE, '#7fb2d6', DIV_MID, '#ebae80', DIV_RED])
+DIV_RED = '#3F3F3F'
+DIV_CMAP = LinearSegmentedColormap.from_list('div_blue_red', [DIV_BLUE, '#8FA2BA', DIV_MID, '#9E9E9E', DIV_RED])
 
 # --- Estado ---
-STATUS_GOOD = '#0ca30c'
-STATUS_CRITICAL = '#d03b3b'
+STATUS_GOOD = '#1F3A5F'
+STATUS_CRITICAL = '#3F3F3F'
 
 
 def new_fig(w=7.5, h=5.0):

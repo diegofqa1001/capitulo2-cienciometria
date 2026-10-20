@@ -50,7 +50,7 @@ def arrow(x1, y1, x2, y2, color=BASELINE):
 def side_note(cx, cy, text, color=DIV_RED):
     b = FancyBboxPatch((cx - 1.55, cy - 0.34), 3.1, 0.68,
                         boxstyle="round,pad=0.02,rounding_size=0.10",
-                        linewidth=1.1, edgecolor=color, facecolor='#fdf3f2', zorder=3)
+                        linewidth=1.1, edgecolor=color, facecolor='#F2F2F2', zorder=3)
     ax.add_patch(b)
     ax.text(cx, cy, text, ha='center', va='center', fontsize=7.6,
             color=INK_PRIMARY, family='Poppins', zorder=4)

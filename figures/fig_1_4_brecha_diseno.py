@@ -63,12 +63,12 @@ axL.add_patch(a)
 # C2-C4 (1,03): sin brecha (valores en la Tabla 2.3 y results/prueba_brechas.csv)
 axL.add_patch(FancyArrowPatch(pos['C3'], pos['C4'], arrowstyle='-', linewidth=1.5, color=DIV_RED,
                               linestyle=(0, (1, 1.6)), zorder=2, alpha=0.85))
-axL.add_patch(FancyArrowPatch(pos['C3'], pos['C5'], arrowstyle='-', linewidth=1.5, color='#e8a77a',
+axL.add_patch(FancyArrowPatch(pos['C3'], pos['C5'], arrowstyle='-', linewidth=1.5, color='#A6A6A6',
                               linestyle=(0, (4, 3)), zorder=2))
 axL.add_patch(FancyArrowPatch(pos['C2'], pos['C4'], arrowstyle='-', linewidth=1.0, color=BASELINE,
                               linestyle=(0, (2, 2)), zorder=1, connectionstyle='arc3,rad=0.35'))
 for (i, j), txt, col, dx, dy in [(('C3', 'C4'), '1,70', DIV_RED, 0.42, 0.0),
-                                 (('C3', 'C5'), '1,68', '#b0602b', 0.0, -0.40)]:
+                                 (('C3', 'C5'), '1,68', '#6E6E6E', 0.0, -0.40)]:
     mx, my = (pos[i][0] + pos[j][0]) / 2 + dx, (pos[i][1] + pos[j][1]) / 2 + dy
     axL.text(mx, my, txt, ha='center', va='center', fontsize=7.4, color=col, family='Poppins',
              fontweight='bold', zorder=6, path_effects=[pe.withStroke(linewidth=2.4, foreground='white')])

@@ -3,10 +3,10 @@
 Los valores proceden de data/final/gap_analysis_v2.json (Tabla 2.3; Figura 2.5
 para la matriz completa) y los p-valores de results/prueba_brechas.csv
 (scripts/11_prueba_brechas_poisson.py). Convención de trazo:
-- rojo punteado: índice > 1,5 y p < 0,05 (prueba de Poisson);
-- rojo tenue discontinuo: índice > 1,5 con p >= 0,05;
+- gris oscuro punteado: índice > 1,5 y p < 0,05 (prueba de Poisson);
+- gris tenue discontinuo: índice > 1,5 con p >= 0,05;
 - gris: índice próximo a 1 (sin brecha);
-- azul continuo: integración por encima de lo esperado.
+- azul marino continuo: integración por encima de lo esperado.
 """
 import sys
 sys.path.insert(0, '.')
@@ -42,7 +42,7 @@ labels = {
     5: 'C5\nConectividad',
 }
 GMAX = gap[(1, 4)]['gap_score']
-FAINT_RED = '#e8a77a'
+FAINT_GREY = '#A6A6A6'
 
 
 def radius(r):
@@ -68,10 +68,10 @@ def gap_edge(i, j, frac, dx=0.0, dy=0.0, rad=0.06):
                              connectionstyle=f'arc3,rad={rad}')
         txt, col = coma(g), DIV_RED
     else:
-        a = FancyArrowPatch(pos[i], pos[j], arrowstyle='-', linewidth=lw, color=FAINT_RED,
+        a = FancyArrowPatch(pos[i], pos[j], arrowstyle='-', linewidth=lw, color=FAINT_GREY,
                              linestyle=(0, (4, 3)), zorder=2, alpha=0.9,
                              connectionstyle=f'arc3,rad={rad}')
-        txt, col = f'{coma(g)}\n(p = {coma(pval[key], 2)})', '#b0602b'
+        txt, col = f'{coma(g)}\n(p = {coma(pval[key], 2)})', '#6E6E6E'
     ax.add_patch(a)
     edge_label(i, j, frac, txt, col, dx, dy)
 
@@ -131,7 +131,7 @@ ax.text(9.7, 3.3, 'Sin co-ocurrencia\n(no se dibujan):\n'
 # Leyenda de trazos
 handles = [
     Line2D([0], [0], color=DIV_RED, lw=2.4, linestyle=(0, (1, 1.2)), label='Brecha > 1,5 con p < 0,05'),
-    Line2D([0], [0], color=FAINT_RED, lw=2.4, linestyle=(0, (4, 3)), label='Brecha > 1,5 con p ≥ 0,05'),
+    Line2D([0], [0], color=FAINT_GREY, lw=2.4, linestyle=(0, (4, 3)), label='Brecha > 1,5 con p ≥ 0,05'),
     Line2D([0], [0], color=BASELINE, lw=1.4, linestyle=(0, (2, 2)), label='Sin brecha (≈ 1)'),
     Line2D([0], [0], color=DIV_BLUE, lw=4.0, label='Integración (< 1)'),
 ]

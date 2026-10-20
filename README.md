@@ -20,7 +20,7 @@ Capítulo 2. Comparten protocolo metodológico (PRISMA
 
 ## Qué encuentra aquí un lector, jurado o par evaluador
 
-- El pipeline completo, en once pasos numerados, desde el export crudo de
+- El pipeline completo, en quince guiones numerados del 01 al 13 (con 06b y 06c), desde el export crudo de
   Web of Science/Scopus hasta la cartografía de clústeres y brechas.
 - Los datos derivados que sustentan cada cifra, tabla y figura del capítulo.
 - Las seis figuras del Capítulo 2 (más la Figura 1.4 del Capítulo 1, que se
@@ -112,7 +112,7 @@ capitulo2-cienciometria/
 8. **Contraste de las brechas** — `scripts/11_prueba_brechas_poisson.py` compara la co-ocurrencia observada con la esperada bajo independencia (prueba de Poisson unilateral, con prueba hipergeométrica exacta y corrección de Holm) y escribe `results/prueba_brechas.csv`: seis de los ocho pares por encima del umbral se apartan de la independencia con p < 0,05, incluidas las cuatro brechas de C1 (p ≤ 0,006); C3–C5 (p = 0,20) y C4–C5 (p = 0,10) no lo hacen. La integración C2–C3 tiene p < 0,001.
 
 9. **Robustez de la partición y brecha por citación** — `scripts/12_robustez_particion.py` reconstruye la red para 36 combinaciones de hiperparámetros (frecuencia documental máxima 40/80/160/sin límite; peso mínimo 1/2/3; resolución 0,5/0,75/1,0) y compara cada partición con la publicada (ARI y NMI); calcula además la brecha por citación entre clústeres bajo dos modelos nulos (permutación de etiquetas, 500 réplicas, y modelo de configuración). Escribe `results/robustez_particion.json`.
-10. **Estabilidad por consenso** — `scripts/13_consenso_estabilidad.py` calcula la matriz de co-asociación entre los cinco clústeres sobre 20 semillas, cinco configuraciones vecinas y la rejilla completa, la división de cada clúster con resolución 1,0 y la conectividad de cada comunidad publicada. Escribe `results/consenso_estabilidad.json`. Con NetworkX 3.6.1 ambos pasos reproducen exactamente los valores reportados en el artículo.
+10. **Estabilidad por consenso** — `scripts/13_consenso_estabilidad.py` calcula la matriz de co-asociación entre los cinco clústeres sobre 20 semillas, cinco configuraciones vecinas y la rejilla completa, la comunidad mayoritaria de cada clúster en cada corrida, la división de cada clúster con resolución 1,0 y la conectividad de cada comunidad publicada. Escribe `results/consenso_estabilidad.json`. Con NetworkX 3.6.1 ambos pasos reproducen exactamente los valores reportados en el artículo.
 
 ## Figuras del artículo
 
@@ -139,7 +139,7 @@ Numeración de figuras: sigue el orden de aparición en la monografía (Figura 2
 Todas las cifras, tablas y figuras del Capítulo 2 son reconstruibles
 directamente a partir de los archivos en `data/final/` — no es necesario
 tener acceso a Web of Science o Scopus para **verificar** lo reportado
-(solo para reproducir desde cero los pasos 1, 2, 3, 7 y 10, que dependen de
+(solo para reproducir desde cero los pasos 1 a 4, 7 y 10, que dependen de
 contenido con licencia editorial). Para regenerar las seis figuras del
 capítulo:
 

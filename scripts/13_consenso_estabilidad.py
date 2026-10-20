@@ -120,7 +120,8 @@ for max_df in [40, 80, 160, None]:
             lab = run(G, res, 42)
             Mg = coassoc([lab])
             big = sum(1 for c in Counter(lab.values()).values() if c >= 100)
-            grid_rows.append(dict(max_df=max_df, min_shared=ms, resolution=res, n_big=big,
+            mg, _ = merges(lab)
+            grid_rows.append(dict(max_df=max_df, min_shared=ms, resolution=res, n_big=big, merges=mg,
                                   C1_C2=round(Mg[0, 1], 3), C1_C3=round(Mg[0, 2], 3), C1_C4=round(Mg[0, 3], 3),
                                   C1_C5=round(Mg[0, 4], 3), C3_C4=round(Mg[2, 3], 3), C2_C3=round(Mg[1, 2], 3)))
             print(grid_rows[-1])

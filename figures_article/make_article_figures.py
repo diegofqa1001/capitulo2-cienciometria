@@ -96,7 +96,7 @@ ax.legend(handles=handles, loc='upper center', frameon=False, fontsize=7.5, bbox
           handletextpad=0.3, columnspacing=1.2)
 save(fig, 'Fig1')
 
-# ---------------- Fig 2: consensus co-association ----------------
+# ---------------- Fig 3: consensus co-association ----------------
 M = np.array(con['seeds_baseline']['coassociation']); M2 = np.array(con['hyperparams_coassociation'])
 fig, axes = plt.subplots(1, 2, figsize=(W, W * 0.47))
 for ax, Mx, tag in [(axes[0], M, '(a)'), (axes[1], M2, '(b)')]:
@@ -112,9 +112,9 @@ for ax, Mx, tag in [(axes[0], M, '(a)'), (axes[1], M2, '(b)')]:
 sm = plt.cm.ScalarMappable(cmap=SEQ, norm=Normalize(0, 1)); sm.set_array([])
 cb = fig.colorbar(sm, ax=axes, fraction=0.025, pad=0.02); cb.set_label('Probability of co-membership', fontsize=7.5)
 cb.outline.set_visible(False); cb.ax.tick_params(labelsize=7)
-save(fig, 'Fig2')
+save(fig, 'Fig3')
 
-# ---------------- Fig 3: gap matrices ----------------
+# ---------------- Fig 2: gap matrices ----------------
 lex = np.full((5, 5), np.nan); inf = np.zeros((5, 5), bool)
 for (i, j), p in gap.items():
     if p['gap_score_inf']:
@@ -169,7 +169,7 @@ sm2 = plt.cm.ScalarMappable(cmap=SEQ_G, norm=LogNorm(1, 70)); sm2.set_array([])
 cb2 = fig.colorbar(sm2, ax=axes[1], fraction=0.046, pad=0.04, ticks=[1, 1.5, 5, 20, 60])
 cb2.ax.set_yticklabels(['1', '1.5', '5', '20', '60'], fontsize=6.8); cb2.outline.set_visible(False)
 fig.subplots_adjust(wspace=0.55)
-save(fig, 'Fig3')
+save(fig, 'Fig2')
 
 # ---------------- Fig 4: lexical versus citation gap ----------------
 fig, ax = plt.subplots(figsize=(W * 0.82, W * 0.62))
@@ -243,7 +243,7 @@ ax.plot([3.6, 3.6], [-0.3, 9.0], color=GRID, lw=0.9, ls=(0, (5, 4)))
 ax.text(1.6, 8.6, 'APPLIED BLOCK', ha='center', fontsize=8, color=INK, fontweight='bold')
 ax.add_patch(mpatches.FancyBboxPatch((4.75, 0.35), 2.95, 7.25, boxstyle='round,pad=0.05,rounding_size=0.3',
                                      fc='#F4F6F9', ec='#8C9DB4', lw=0.8, zorder=0))
-ax.text(6.22, -0.25, 'THEORETICAL–BEHAVIOURAL CORE', ha='center', fontsize=8, color=NAVY, fontweight='bold')
+ax.text(6.22, -0.25, 'THEORETICAL CORE', ha='center', fontsize=8, color=NAVY, fontweight='bold')
 ax.text(9.6, 6.2, 'EMERGING\nSPECIALTY', ha='center', fontsize=7.5, color=INK2, fontweight='bold')
 edge(1, 2, 0.42); edge(1, 3, 0.42); edge(1, 4, 0.42)
 edge(1, 5, 0.5, dy=3.55, r=-0.68)

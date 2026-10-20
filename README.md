@@ -74,13 +74,16 @@ capitulo2-cienciometria/
 │   ├── 09_tos_classify.py           # estratificación raíces/tronco/hojas — re-ejecutable
 │   ├── 10_gap_analysis.py           # requiere palabras clave (no incluidas)
 │   ├── 11_prueba_brechas_poisson.py # prueba de Poisson/exacta de cada brecha — re-ejecutable
+│   ├── 12_robustez_particion.py     # rejilla de 36 configuraciones y brecha por citación con dos modelos nulos — re-ejecutable
+│   ├── 13_consenso_estabilidad.py   # co-asociación entre 20 semillas, 5 configuraciones vecinas y la rejilla — re-ejecutable
 │   └── check_reproducibility.py     # compara una re-ejecución contra data/final/
-├── results/             salidas de los pasos 6b, 6c y 11 (resolucion_louvain.json, cocitacion.json, prueba_brechas.csv)
+├── results/             salidas de los pasos 6b, 6c, 11, 12 y 13 (resolucion_louvain.json, cocitacion.json, prueba_brechas.csv, robustez_particion.json, consenso_estabilidad.json)
 ├── data/
 │   ├── raw/            (vacío — el lector coloca aquí sus propios exports WoS/Scopus)
 │   ├── intermediate/   (se genera al ejecutar los pasos 1-4)
 │   └── final/           datos derivados publicados (ver tabla abajo)
-└── figures/             las 6 figuras del Capítulo 2 + la Figura 1.4 del Capítulo 1, con sus scripts
+├── figures/             las 6 figuras del Capítulo 2 + la Figura 1.4 del Capítulo 1, con sus scripts
+└── figures_article/     Fig1–Fig5 del artículo en inglés derivado del capítulo (PNG, TIFF y EPS) y sus guiones
 ```
 
 ## Datos publicados en `data/final/`
@@ -107,6 +110,13 @@ capitulo2-cienciometria/
 6. **Tree of Science** — estratificación raíces/tronco/hojas sobre la red de citación (corpus + referencias externas).
 7. **Análisis de brechas estructurales** (Burt, 1992) — 8 de 10 pares de clústeres con índice superior al umbral descriptivo de 1,5.
 8. **Contraste de las brechas** — `scripts/11_prueba_brechas_poisson.py` compara la co-ocurrencia observada con la esperada bajo independencia (prueba de Poisson unilateral, con prueba hipergeométrica exacta y corrección de Holm) y escribe `results/prueba_brechas.csv`: seis de los ocho pares por encima del umbral se apartan de la independencia con p < 0,05, incluidas las cuatro brechas de C1 (p ≤ 0,006); C3–C5 (p = 0,20) y C4–C5 (p = 0,10) no lo hacen. La integración C2–C3 tiene p < 0,001.
+
+9. **Robustez de la partición y brecha por citación** — `scripts/12_robustez_particion.py` reconstruye la red para 36 combinaciones de hiperparámetros (frecuencia documental máxima 40/80/160/sin límite; peso mínimo 1/2/3; resolución 0,5/0,75/1,0) y compara cada partición con la publicada (ARI y NMI); calcula además la brecha por citación entre clústeres bajo dos modelos nulos (permutación de etiquetas, 500 réplicas, y modelo de configuración). Escribe `results/robustez_particion.json`.
+10. **Estabilidad por consenso** — `scripts/13_consenso_estabilidad.py` calcula la matriz de co-asociación entre los cinco clústeres sobre 20 semillas, cinco configuraciones vecinas y la rejilla completa, la división de cada clúster con resolución 1,0 y la conectividad de cada comunidad publicada. Escribe `results/consenso_estabilidad.json`. Con NetworkX 3.6.1 ambos pasos reproducen exactamente los valores reportados en el artículo.
+
+## Figuras del artículo
+
+`figures_article/layout_map.py` calcula el diseño por fuerzas de la red (`data/final/layout_coupling_spring.json`) y `figures_article/make_article_figures.py` genera las Fig1 a Fig5 del artículo en inglés derivado de este capítulo, en la paleta institucional (azul marino y grises), con codificación redundante por forma de marcador, tramado o tipo de trazo.
 
 ## Nota de reproducibilidad conocida
 
